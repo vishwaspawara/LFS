@@ -40,8 +40,35 @@ Compiler check:
 OK:    g++ works
 OK: nproc reports 12 logical cores are available
 ```
-setting up git
+
+setting up `git`
+
 generating ssh key pair
 `ssh-keygen -t ed25519 -C "vishwaspawara07@gmail.com"`
+copying the public key to github
 `cat ~/.ssh/id_ed25519.pub |copy`
+confirm remot key registration
 `ssh -T git@github.com`
+create global config for email and name
+`git config --global user.email "vishwaspawara07@gmail.com"`
+`git config --global user.name "vishwaspawara"`
+init the repo
+`git remote set-url origin git@github.com:vishwaspawara/LFS.git`
+first commit
+`git commit -m "setting up git and host for lfs"`
+push changes
+`git push -u origin main`
+
+
+### creating partition on host
+
+created partition of 50GB
+`sudo cfdisk /dev/nvme0n1`
+`sudo e2label /dev/nvme0n1p3 lfs13.0+` gave name lfs13.0+
+`sudo mkfs.ext4 /dev/nvme0n1p3` format the partition to `ext4`
+
+Setting $LFS variable and Umask
+Appending the same to `~/.bashrc` for persistence
+`export LFS=/mnt/lfs/`
+`sudo mkdir -pv /mnt/lfs`
+`umask 022`
