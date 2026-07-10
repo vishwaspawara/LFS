@@ -72,3 +72,7 @@ Appending the same to `~/.bashrc` for persistence
 `export LFS=/mnt/lfs/`
 `sudo mkdir -pv /mnt/lfs`
 `umask 022`
+
+
+Since this is environment setup and I have no idea how long this is going to take I'm creating `scripts/lfs-env.sh` to handle setup.
+
