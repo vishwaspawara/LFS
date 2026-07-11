@@ -292,3 +292,160 @@ adding make flag for cores since my host system has 12 cores i'll execute `make 
 
 ## 3. Building the LFS Cross Toolchain and Temporary Tools.
 
+### Crosscompilation
+
+we have 3 machines -
+1. build    - machine that compiles the `program`
+2. host     - machine on which the compiled `program` will run 
+3. target   - machine for which the `program` generates the output (applicable to `program`s which produces codes e.g. compiler, linkers, etc) 
+
+Build 'toolchain' using host Debian system 
+Build 'LFS' using 'toolchain'
+Build 'LFS' using 'LFS' (to remove dependencies of 'toolchain' entirely and make 'LFS' self contained.)
+
+
+## 5. Compiling a Cross-Toolchain
+
+toolchain consists of 
+`Binutils`
+`GCC`
+`Linux-7.1.2 API headers`
+`Glibc`
+`Libstdc++`
+and will be installed in `$LFS/tools` dir
+
+#### binutils-2.44
+
+`~cd $LFS/sources` move the downloaded packages
+`tar -xf binutils-2.44.tar.xz` extract the tarball
+`cd binutils-2.44` move the extracted dir
+`mkdir -v build` create separate build as recommened by binutils
+`cd build` move to buil dir
+
+```bash
+../configure \
+    --prefix=$LFS/tools \ # dir to install packages in
+    --with-sysroot=$LFS \ #
+    --target=$LFS_TGT \
+    --disable-nls \
+    --enable-gprofng=no \
+    --disable-werror \
+    --enable-new-dtags \
+    --enable-default-hash-style=gnu
+```
+`rm -rf binutils-2.46.1` and finally cleanup of extracted file
+
+#### gcc-15.2.0
+
+```bash
+#!/bin/bash
+
+cd "$LFS/sources"
+
+# Extract GCC
+tar -xf gcc-15.2.0.tar.xz
+cd gcc-15.2.0
+
+# Extract required GCC libraries
+tar -xf ../mpfr-4.2.2.tar.xz
+mv -v mpfr-4.2.2 mpfr
+
+tar -xf ../gmp-6.3.0.tar.xz
+mv -v gmp-6.3.0 gmp
+
+tar -xf ../mpc-1.4.1.tar.xz
+mv -v mpc-1.4.1 mpc
+
+# Use lib instead of lib64 on x86_64
+case "$(uname -m)" in
+    x86_64)
+        sed -e '/m64=/s/lib64/lib/' \
+            -i.orig gcc/config/i386/t-linux64
+        ;;
+esac
+
+# Out-of-source build
+mkdir -v build
+cd build
+
+../configure \
+    --target="$LFS_TGT" \
+    --prefix="$LFS/tools" \
+    --with-glibc-version=2.43 \
+    --with-sysroot="$LFS" \
+    --with-newlib \
+    --without-headers \
+    --enable-default-pie \
+    --enable-default-ssp \
+    --disable-fixincludes \
+    --disable-nls \
+    --disable-shared \
+    --disable-multilib \
+    --disable-threads \
+    --disable-libatomic \
+    --disable-libgomp \
+    --disable-libquadmath \
+    --disable-libssp \
+    --disable-libvtv \
+    --disable-libstdcxx \
+    --enable-languages=c,c++
+
+make
+make install
+
+# Install temporary limits.h
+cat ../gcc/{limitx,glimits,limity}.h > \
+    "$("$LFS_TGT"-gcc -print-file-name=include)/limits.h"
+
+# Cleanup
+cd "$LFS/sources"
+rm -rf gcc-15.2.0
+```
+
+#### Linux API headers
+
+```bash
+#!/bin/bash
+
+cd "$LFS/sources"
+
+# Extract Linux kernel source
+tar -xf linux-6.16.1.tar.xz
+cd linux-6.16.1
+
+# Remove any stale build artifacts (stronger than `make clean`)
+make mrproper
+
+# Generate user-space API headers
+make headers
+
+# Keep only C header files delete others 
+find usr/include -type f ! -name '*.h' -delete
+
+# Install headers into the LFS system - copy include/ dir to usr/
+cp -rv usr/include "$LFS/usr"
+
+# Cleanup extracted source
+cd "$LFS/sources"
+rm -rf linux-6.16.1
+```
+
+
+## I have to stop here -
+
+- [x] Temporary directory structure
+- [x] Binutils Pass 1
+- [x] GCC Pass 1
+- [x] Linux API Headers
+- [ ] Glibc (build failed)
+
+
+Attempted build using LFS r13.0-143-systemd (development snapshot).
+
+Build failed during Glibc 2.43 with:
+- LONG_MAX not defined
+- Temporary toolchain verified
+- Suspected incompatibility/regression in development book
+
+Decision:
+Restart using latest stable LFS release.
