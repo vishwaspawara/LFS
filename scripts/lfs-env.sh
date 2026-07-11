@@ -2,11 +2,9 @@
 
 
 export LFS=/mnt/lfs
+sudo mount /dev/nvme0n1p3 $LFS
 
 umask 022
-
-sudo mount /dev/nvme0n1p3 /mnt/lfs/
-
 
 echo "LFS=$LFS"
 echo "umask=$(umask)"
