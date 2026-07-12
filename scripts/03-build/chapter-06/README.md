@@ -34,3 +34,18 @@ Packages build in this phase -
 13. sed using `18-sed-4.9.sh`
 14. tar using `19-tar-1.35.sh`
 15. xz using `20-xz-5.8.2.sh` this is heavily used compression tool (someone even tried to compromise this - almost succeeded)
+16. binutils-pass2 using `21-binutils-2.46.0.sh`
+
+The difference between pass1 and pass2
+
+Pass1	
+Installed in `$LFS/tools`
+Temporary cross-toolchain	
+Used to bootstrap Glibc and other temporary tools	
+Built before `Glibc`
+
+Pass 2
+Installed in `$LFS/usr`
+Final LFS toolchain
+Used by the completed LFS system
+Built after `Glibc` is available
