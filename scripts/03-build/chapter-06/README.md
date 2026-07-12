@@ -25,3 +25,4 @@ Packages build in this phase -
 4. coreutils using `09-coreutils-9.10.sh`
 5. diffutils using `10.diffutils-3.12.sh`
 6. file using `11-file-5.46.sh`
+7. findutils using `12-findutils-4.10.0.sh` this provide `find` `locate` `xargs` and `updatedb` tools
