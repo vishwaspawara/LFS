@@ -30,3 +30,6 @@ Packages build in this phase -
 9. grep using `14-grep-3.12.sh`
 10. gzip using `15-gzip-1.14.sh`
 11. make using `16-make-1.4.4.sh`
+12. patch using `17-patch-2.8.sh`
+13. sed using `18-sed-4.9.sh`
+14. tar using `19-tar-1.35.sh`
