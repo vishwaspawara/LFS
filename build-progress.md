@@ -449,3 +449,16 @@ Build failed during Glibc 2.43 with:
 
 Decision:
 Restart using latest stable LFS release.
+
+
+# Attempt two 
+
+Resetting the existing build (only what is necessary)
+
+`sudo mkfs.ext4 /dev/nvme0n1p3`
+`sudo LFS="$LFS" bash create-limited-dir.sh`
+`sudo chown -v lfs $LFS/{usr/{,/*},var,etc,tools,lib64}`
+`sudo chmod -v a+wt $LFS/sources/`
+
+
+
