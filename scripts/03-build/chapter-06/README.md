@@ -36,7 +36,7 @@ Packages build in this phase -
 15. xz using `20-xz-5.8.2.sh` this is heavily used compression tool (someone even tried to compromise this - almost succeeded)
 16. binutils-pass2 using `21-binutils-2.46.0.sh`
 
-The difference between pass1 and pass2
+The difference between pass1 and pass2 of binutils.
 
 Pass1	
 Installed in `$LFS/tools`
@@ -49,3 +49,37 @@ Installed in `$LFS/usr`
 Final LFS toolchain
 Used by the completed LFS system
 Built after `Glibc` is available
+
+17. gcc using `22-gcc-15.2.sh`
+
+GCC Pass 1 vs Pass 2
+
+Pass 1	
+Installed in $LFS/tools	
+Cross-compiler used to bootstrap the system	
+Built without Glibc headers or libraries	
+Minimal runtime support	
+
+Pass 2
+Installed in $LFS/usr
+Compiler intended for the final LFS system
+Built against the target Glibc
+Provides the standard C and C++ toolchain for LFS
+
+
+both pass 2 replaces the temp pass 1 ($LFS/tools). 
+
+
+With this GCC it completes the Cross Compiling Temporary Tools
+
+```bash
+
+build (debian)
+    |
+    v
+Temporary Toolchain ($LFS/tools)
+    |
+    v
+Programs installation into $LFS/usr
+
+```
