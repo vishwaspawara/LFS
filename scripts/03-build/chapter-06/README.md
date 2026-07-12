@@ -33,3 +33,4 @@ Packages build in this phase -
 12. patch using `17-patch-2.8.sh`
 13. sed using `18-sed-4.9.sh`
 14. tar using `19-tar-1.35.sh`
+15. xz using `20-xz-5.8.2.sh` this is heavily used compression tool (someone even tried to compromise this - almost succeeded)
