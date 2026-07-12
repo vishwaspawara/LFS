@@ -23,3 +23,4 @@ Packages build in this phase -
 2. ncurses using `07-ncurses-6.6.sh`
 3. bash using `08-bash-5.3.sh`
 4. coreutils using `09-coreutils-9.10.sh`
+5. diffutils using `10.diffutils-3.12.sh`
