@@ -27,3 +27,4 @@ Packages build in this phase -
 6. file using `11-file-5.46.sh`
 7. findutils using `12-findutils-4.10.0.sh` this provide `find` `locate` `xargs` and `updatedb` tools
 8. gaws using `13.gawk-5.3.2.sh` gnu inplementation of awk language.
+9. grep using `14-grep-3.12.sh`
