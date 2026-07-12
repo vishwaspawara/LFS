@@ -10,14 +10,27 @@ I always wanted to build Linux From Scratch, so heres the documentation of the s
 | README.md
 | build-progress.md     #build log and notes
 | scripts/              #helper scripts used for build 
+    | host/
+    | setup/
+    | chapter-05/
 ```
+
+
+### status
+
+#### first attempt
 
 The build follows official Linux From Scratch book Version r13.0-143 systemd
 
-LFS: complete temporary toolchain and document first bootstrap attempt
-
+completed :
 - Added Binutils Pass 1 build script
 - Added GCC Pass 1 build script
 - Added Linux API headers installation script
 - Recorded Glibc build failure on LFS r13.0-143-systemd
-- Preparing to restart from latest stable LFS release
+
+the build failed during temporary Glibc build due to usage of development snapshot of the book
+
+
+#### second attemp
+
+The build have been restarted using the latest stable linux from sratch 13.0 (systemd) release version.
