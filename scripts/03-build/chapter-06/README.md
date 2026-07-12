@@ -29,3 +29,4 @@ Packages build in this phase -
 8. gaws using `13.gawk-5.3.2.sh` gnu inplementation of awk language.
 9. grep using `14-grep-3.12.sh`
 10. gzip using `15-gzip-1.14.sh`
+11. make using `16-make-1.4.4.sh`
