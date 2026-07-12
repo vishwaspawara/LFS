@@ -461,4 +461,7 @@ Resetting the existing build (only what is necessary)
 `sudo chmod -v a+wt $LFS/sources/`
 
 
+succeeded in completing the 5th chapter - there were no error.
+I have started keeping scripts of each package that have been compiled and installed and changed dir structure of repo to reflect the same.
 
+This file may not get updated as frequently as it used to.
