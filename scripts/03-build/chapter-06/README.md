@@ -24,3 +24,4 @@ Packages build in this phase -
 3. bash using `08-bash-5.3.sh`
 4. coreutils using `09-coreutils-9.10.sh`
 5. diffutils using `10.diffutils-3.12.sh`
+6. file using `11-file-5.46.sh`
