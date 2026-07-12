@@ -22,3 +22,4 @@ Packages build in this phase -
 1. m4 using `06-m4-1.4.21.sh`
 2. ncurses using `07-ncurses-6.6.sh`
 3. bash using `08-bash-5.3.sh`
+4. coreutils using `09-coreutils-9.10.sh`
