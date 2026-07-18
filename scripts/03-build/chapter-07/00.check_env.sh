@@ -1,11 +1,24 @@
-whoami 
+#!/bin/bash
 
-ehco "should be root"
+set -euo pipefail
 
+DEVICE="/dev/nvme0n1p3"
 export LFS="/mnt/lfs"
-echo 'check $LFS veriable should be /mnt/lfs'
 
-mount /dev/nvme0n1p3 $LFS
+echo "Running as: $(whoami)"
+echo "LFS=$LFS"
 
-mountpoint -q "$LFS" && echo "LFS mounted"
+[[ $EUID -eq 0 ]] || {
+    echo "Run this script as root."
+    exit 1
+}
 
+[[ "$LFS" == "/mnt/lfs" ]] || { exit 1; }
+
+mkdir -pv "$LFS"
+
+if ! mountpoint -q "$LFS"; then
+    mount "$DEVICE" "$LFS"
+fi
+
+echo "$LFS mounted"

@@ -1,6 +1,5 @@
-#!/bin/bash
+#source this file 
 
-set -euo pipefail
 
 DEVICE="/dev/nvme0n1p3"
 export LFS="/mnt/lfs"

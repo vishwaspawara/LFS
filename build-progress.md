@@ -470,3 +470,6 @@ This file may not get updated as frequently as it used to.
 Chaptr 6 completed on 13/07/2026
 
 Starting the Chapter 7 on 17/07/2026 - Entering Chroot and Building Additional Temporary Tools.
+
+Back to compiling but found multiple mounts on some dir - 
+updated resuming scripts with guardrails to mount directories only when not mounted.

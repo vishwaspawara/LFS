@@ -35,3 +35,5 @@ once third script is executed you shoud see something like this
 all the scripts starting from 02.* shall be executed in after entering `chroot` environment.
 
 All the setup of before starting the compilation is done shall continue...
+
+updated all the startup script with guardrail to mount dir only if not mounted - it has created multiple mounts - it would not have costed anything but cannot take risk at this stage.
