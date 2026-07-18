@@ -31,3 +31,4 @@ following are compression programs
 8. zstd using `8.10-zstd-1.5.7.sh`
 
 9. file using `8.11-file-5.46.sh` used to determine the type of file
+10. readline using `8.12-readline-8.3.sh` library for commandline editing and history
