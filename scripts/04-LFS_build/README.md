@@ -29,3 +29,5 @@ following are compression programs
 6. xz using `8.08-xz-5.8.2.sh`
 7. lz4 using `8.09-lz4-1.10.0.sh`
 8. zstd using `8.10-zstd-1.5.7.sh`
+
+9. file using `8.11-file-5.46.sh` used to determine the type of file
