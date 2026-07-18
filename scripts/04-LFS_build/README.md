@@ -38,3 +38,4 @@ following are compression programs
 14. lex/flex using `8.16-flex-2.6.4.sh`
 15. tcl (pronounced tickle) using `8.17-tcl-8.6.17.sh`
 16. expect using `8.18.expect5.45.4.sh` this is used to communicate with interactive programms according to a script
+17. dejagnu - based on observation this must used for testing, created using `8.19-dejagnu-1.6.3.sh`
