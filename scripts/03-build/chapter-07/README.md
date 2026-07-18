@@ -47,5 +47,48 @@ updated all the startup script with guardrail to mount dir only if not mounted -
 5. texinfo using `27-texinfo-7.2.sh`
 6. linux-utils using `28-util-linux-2.41.3.sh`
 
+### Cleanup and Backup
 
+the build till here has been successful
+and next stage will overwrite the temp files created so it is good to take the back-up so if anything to break instead of starting from SCRATCH I can start from here.
 
+most of cleanup is not necessary but this will save around 35MB of space
+
+```bash
+rm -rf /usr/share/{info,man,doc}/*
+find /usr/{lib,libexec} -name \*.la -delete #these could break BLFS
+rm -rf /tools #this dir is also not needed as we already have everythin in lfs system
+
+```
+
+For back up - exit the `chroot`
+
+```bash
+exit
+```
+make sure LFS variable is set in root environment
+umount the virtual file system
+
+```bash
+mountpoint -q $LFS/dev/shm && umount $LFS/dev/shm
+umount $LFS/dev/pts
+umount $LFS/{sys,proc,run,dev}
+
+```
+Now creating the tarball of build so far
+
+```bash
+cd $LFS
+tar -cJpf $HOME/lfs-temp-tools-13.0-systemd.tar.xz . # replace the path as per convenience
+
+```
+
+Keep this file copied to separate device (just in case)
+
+I have created 
+
+- `cleanup.sh`
+- `backup.sh` 
+- `resume_after_temp_build.sh` incase needs resume.
+
+this marks end of chapter 7 and PART III
