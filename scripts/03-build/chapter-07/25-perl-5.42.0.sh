@@ -33,4 +33,4 @@ make install
 cd "/sources"
 rm -rf $PACKAGE
 
-echo "$PCKAGE installed successfully."
+echo "$PACKAGE installed successfully."
