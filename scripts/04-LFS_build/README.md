@@ -21,3 +21,4 @@ bash ../03-build/chapter-07/01.chroot_setup/03_enter_chroot.sh
 
 1. man-pages using `8.01-man-pages-6.17.sh`
 2. protocols and services of network using `8.02-iana-etc-20260202.sh`
+3. glibc using `8.05-glibc.sh` - got through the script this includes many configuration which were not needed when complied earlier stages.
