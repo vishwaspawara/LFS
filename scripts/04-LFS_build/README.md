@@ -33,3 +33,4 @@ following are compression programs
 9. file using `8.11-file-5.46.sh` used to determine the type of file
 10. readline using `8.12-readline-8.3.sh` library for commandline editing and history
 11. pear compatible regular expression 'pxre2' using `8.13-pcre2-10.47.sh`
+12. m4 macro processor using `8.14-m4-1.4.21.sh`
