@@ -37,3 +37,8 @@ all the scripts starting from 02.* shall be executed in after entering `chroot` 
 All the setup of before starting the compilation is done shall continue...
 
 updated all the startup script with guardrail to mount dir only if not mounted - it has created multiple mounts - it would not have costed anything but cannot take risk at this stage.
+
+### back to compiling the packages -
+
+1. gettext using `23-gettext-1.0.sh`
+2. bison using `24-bison-3.2.8.sh`
