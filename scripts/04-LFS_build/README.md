@@ -35,4 +35,4 @@ following are compression programs
 11. pear compatible regular expression 'pxre2' using `8.13-pcre2-10.47.sh`
 12. m4 macro processor using `8.14-m4-1.4.21.sh`
 13. calculator using `8.15-bc-7.0.3.sh`
-
+14. lex/flex using `8.16-flex-2.6.4.sh`
