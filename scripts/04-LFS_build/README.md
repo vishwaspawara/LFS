@@ -39,3 +39,6 @@ following are compression programs
 15. tcl (pronounced tickle) using `8.17-tcl-8.6.17.sh`
 16. expect using `8.18.expect5.45.4.sh` this is used to communicate with interactive programms according to a script
 17. dejagnu - based on observation this must used for testing, created using `8.19-dejagnu-1.6.3.sh`
+18. pkgconf successor to pkg-config compiled and installed using `8.20-pkgconf-2.5.1.sh`
+
+This marks the work of the day shall return soon
