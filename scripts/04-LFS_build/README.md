@@ -42,3 +42,15 @@ following are compression programs
 18. pkgconf successor to pkg-config compiled and installed using `8.20-pkgconf-2.5.1.sh`
 
 This marks the work of the day shall return soon
+Back to compiling packages, today I was able to compile following 10 packages largest of which is GCC
+
+19. binutils using `8.21-binutils-2.46.0.sh`
+20. gmp using `8.22-gmp-6.3.0.sh` gmp, mpfr, mpc are maths library
+21. mpfr using `8.23-mpfr-4.2.2.sh`
+22. mpc using `8.24-mpc-1.3.1.sh`
+23. attr using `8.25-attr-2.5.2.sh` file attributes utilities
+24. acl using `8.26-acl-2.3.2.sh` fine tuned access management
+25. libcap using `8.27-libcap-2.77.sh`
+26. libxcrypt using `8.28-libxcrypt-4.5.2.sh` 
+27. shadwo for password management and configuration`8.29-shadow-4.19.3.sh` - setup the root password 
+28. gcc `8.30-gcc-15.2.0.sh` the test took more than an hour to complete completed the chekcs given in book, all good this is perfect time to stop for the day. shall continue soon.

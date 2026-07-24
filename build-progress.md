@@ -473,3 +473,6 @@ Starting the Chapter 7 on 17/07/2026 - Entering Chroot and Building Additional T
 
 Back to compiling but found multiple mounts on some dir - 
 updated resuming scripts with guardrails to mount directories only when not mounted.
+
+
+back to completing chapter 8 {24,25}/07/2026 not much just 10 more packages compiled. This make sense as it includes running the tests.
