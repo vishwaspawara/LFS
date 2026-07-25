@@ -54,3 +54,35 @@ Back to compiling packages, today I was able to compile following 10 packages la
 26. libxcrypt using `8.28-libxcrypt-4.5.2.sh` 
 27. shadwo for password management and configuration`8.29-shadow-4.19.3.sh` - setup the root password 
 28. gcc `8.30-gcc-15.2.0.sh` the test took more than an hour to complete completed the chekcs given in book, all good this is perfect time to stop for the day. shall continue soon.
+
+back at it -
+29. nucurse usef to manage tty display `8.31-ncurses-6.6.sh`
+30. sed using `8.32-sed-4.9.sh`
+31. psmisc using `8.33-psmisc-23.7.sh`
+32. gettext using `8.34-gettext-1.0.sh`
+33. bison compiler generator using `8.35-bison.3.8.2.sh`
+34. grep, fgrep and egrep using `8.36-grep-3.12.sh`
+35. bash using `8.37-bash-5.3.sh` also replaced live
+36. libtool using `8.38-libtool-2.5.4.sh`
+37. GNU database management using `8.39-gdbm-1.26.sh`
+38. gperf used to generate hash using `8.40-gperf-3.3.sh`
+39. expat using `8.41-expat-2.7.4.sh`
+40. inetutils - networking tools using `8.42-inetutils-2.7.sh`
+41. less using `8.43-less-692.sh`
+42. perl using `8.44-perl-5.42.0.sh`
+43. xml parser using `8.45-xml-parser-2.47.sh`
+44. automake using `8.48-automake-1.18.1.sh`
+45. openssl lib used by openssh and others using`8.49-openssl-3.6.1.sh`
+46. only the libelf using `8.50-libelf.sh`
+47. libffi used to refer object fils in interpreted languages using`8.51-libffi-3.5.2.sh`
+48. sqlite using `8.52-sqlite-3510200.sh`
+49. python using `8.53-Python-3.14.3.sh`
+50. build core for python packages using`8.54-flit-core-3.12.0.sh` used pip
+51. packaging standards using `8.55-packaging-26.0.sh` used pip
+52. wheel using `8.56-wheel-0.46.3.sh` used pip
+53. classic setuptools using `8.57-setuptools-82.0.0.sh` used pip
+54. ninja build tool using `8.58-ninja-1.13.2.sh`
+55. meson (fast and simple) using `8.59-meson-1.10.1.sh`
+56. tools used to get kernel status using `8.60-kmod-34.2.sh`
+
+dozen more to complete the copiliation part of LFS :)
