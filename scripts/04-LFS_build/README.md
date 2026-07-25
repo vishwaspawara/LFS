@@ -86,3 +86,46 @@ back at it -
 56. tools used to get kernel status using `8.60-kmod-34.2.sh`
 
 dozen more to complete the copiliation part of LFS :)
+
+57. utils needed by every os such as cat, cp, and other utils using `8.61-coreutils-9.10.sh`
+58. diff and cmp using `8.62-diffutils-3.12.sh`
+59. gawk using `8.63-gawk-5.3.2.sh`
+60. find/local using `8.64-findutils-4.10.0.sh`
+61. groff using `8.65-groff-1.23.0.sh`
+
+62. `8.66-grub-2.14.sh` - I have skipped this for now - will compile using BLFS, lfs supports legacy by default mine is uefi
+
+63. gzip using `8.67-gzip-1.14.sh`
+64. iproute2 using `8.68-iproute2-6.18.0.sh` - bridge, ip, ss and many fundamentals
+65. kbd using `8.69-kbd-2.9.0.sh`
+66. libpipeline using `8.70-libpipeline-1.5.8.sh` to manage subprocess pipeline
+67. make using `8.71-make-4.4.1.sh`
+68. patch using `8.72-patch-2.8.sh`
+69. tar for archiving utilities using `8.73-tar-1.35.sh` this will overwrite existing binaries
+70. textinfo for reading writing and converting info pages using `8.74-texinfo-7.2.sh`
+71. my go to editor VIM using `8.75-vim-9.2.0078.sh` also created vimrc
+72. python module of markup safe string using `8.76-markupsafe-3.0.3.sh`
+73. jinja2 another python modul using `8.77-jinja2-3.1.6.sh`
+74. systemd using `8.78-systemd-256.1.sh` highly contested addition replacing the init v
+75. dbus communication utility between different application using `8.79-dbus-1.16.2.sh`
+76. mandb for finding and viewing man pages using `8.80-man-db-2.13.1.sh`
+77. utilities for monitoring processses using `8.81-procps-ng-4.0.6.sh` - ps, top, pkill, etc
+78. miscellaneous utility programs covering systems, console, partition and messages using `8.82-util-linux-2.41.3.sh`
+79. e2fsprogs to manage ext2 file system using `8.83-e2fsprogs-1.47.3.sh`
+
+
+now all the packages have been compiled (except grub - shall be compiled from BLFS). 
+Most of the programs have been compiled using debugging symbols so if those are removed the size of current LFS should reduce by almost 2GB...
+But since strip is destructive operation it's good time to take backup. 
+
+for this exit chroot and execute following `backup_before_strip.sh`
+
+Come back to chroot environment 
+Now strip the build using `8.84-strip_and_cleanup.sh`
+
+again leave chroot environment to create another backup after stripping `backup_after_strip.sh`
+
+
+This marks the end of compilation ...
+
+next task is completing the System Configuration
