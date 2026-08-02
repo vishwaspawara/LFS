@@ -55,3 +55,23 @@ so installation order is popt -> efivar -> efibootmgr -> grub
 
 install two dependencies of efibootmgr using `04-popt-1.19.sh` and `05-efivar-39.sh`
 install bootmgr dependecy for grub UEFI using `06-efibootmgr-18.sh` and finally install the grub itself using `07-grub-2.14.h`
+
+## making system bootable
+
+first check what is necessary before running `grub-install` command, I was missing `efivar` mount.
+So left the chroot environment and created and mount-bind the required dir
+```
+mkdir -pv "$LFS/sys/firmware/efi/efivars"
+mount --bind /sys/firmware/efi/efivars "$LFS/sys/firmware/efi/efivars"
+```
+
+Do verify requirements using following `08-pre-grub-verification.sh`
+
+after verification passed install the grub using `09-grub-install.sh`
+
+Verify using `efibootmgr` - there should be new entry for LFS.
+
+## The End
+
+create files describing the current build - using `10-os-release-files.sh` (this is where my name will be printed instead of debian or ubuntu)
+
