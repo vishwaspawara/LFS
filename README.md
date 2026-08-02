@@ -40,3 +40,10 @@ The next stage is system configuration - done
 Kernel and bootloader setup - done
 
 Test if LFS boots.
+
+- first blank screen
+- getting output of `echo`
+- kernel panick
+- wayaround - compile the kernel using working config of host.
+Now I have a bootable LFS.
+Shall commit the working config for future experiments `scripts/04-LFS_build/chapter-10/kernel-config-working-6.18.10`
