@@ -35,4 +35,8 @@ the build failed during temporary Glibc build due to usage of development snapsh
 
 The build have been restarted using the latest stable linux from sratch 13.0 (systemd) release version.
 
-The compilation of the base LFS system has now been completed successfully. The next stage is system configuration, followed by kernel and bootloader setup before the first boot into the new LFS system.
+The compilation of the base LFS system has now been completed successfully. 
+The next stage is system configuration - done
+Kernel and bootloader setup - done
+
+Test if LFS boots.
